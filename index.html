@@ -47,20 +47,23 @@
 </head>
 <body>
 
-<!-- ===== FLOATING PDF / SAVE BUTTON ===== -->
-<button class="save-pdf-btn" aria-label="Save guide as PDF">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
+<!-- ===== FLOATING BACK-TO-TOP BUTTON ===== -->
+<button class="back-to-top" aria-label="Back to top of page" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <polyline points="6 14 12 8 18 14"/>
+    <line x1="12" y1="8" x2="12" y2="20"/>
   </svg>
-  <span class="btn-label-full">Save as PDF</span>
-  <span class="btn-label-short">Save PDF</span>
+  <span class="btn-label-full">Back to top</span>
+  <span class="btn-label-short">Top</span>
 </button>
 
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="#top" class="brand">Scrubs <em>&</em> Scripture</a>
+    <button class="nav-save-pdf" aria-label="Save guide as PDF" type="button">
+      <span class="btn-label-full">Save PDF</span>
+      <span class="btn-label-short">PDF</span>
+    </button>
     <button class="nav-toggle">Contents</button>
   </div>
   <div class="navmenu" id="navmenu">

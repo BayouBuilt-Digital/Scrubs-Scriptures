@@ -145,7 +145,6 @@ a:hover { color: var(--ink); }
 }
 .topnav .brand em { font-style: italic; color: var(--rose); font-weight: 500; }
 .nav-toggle {
-  margin-left: auto;
   background: transparent;
   border: 1px solid var(--rule);
   padding: 6px 14px;
@@ -158,6 +157,30 @@ a:hover { color: var(--ink); }
   border-radius: 2px;
 }
 .nav-toggle:hover { background: var(--paper); color: var(--ink); }
+
+/* Save-PDF button in the top nav — sage outline so it reads as a
+   secondary action beside the primary Contents toggle. */
+.nav-save-pdf {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid #c5d0b8;
+  padding: 6px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4a6b3f;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-save-pdf:hover,
+.nav-save-pdf:focus {
+  background: #eef4e7;
+  color: #3a5330;
+  outline: none;
+}
+.nav-save-pdf .btn-label-short { display: none; }
 .navmenu {
   display: none;
   position: absolute; top: 100%; right: 20px; left: 20px;
@@ -2484,9 +2507,16 @@ footer .closing-legal .tiny {
   section { padding: 40px 0 12px; }
 
   /* Top nav */
-  .topnav-inner { padding: 10px 16px; }
+  .topnav-inner { padding: 10px 16px; gap: 10px; }
   .topnav .brand { font-size: 17px; }
   .nav-toggle { padding: 6px 12px; font-size: 10px; }
+  .nav-save-pdf {
+    padding: 6px 10px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .nav-save-pdf .btn-label-full { display: none; }
+  .nav-save-pdf .btn-label-short { display: inline; }
 
   /* Hero — tighter spacing and scaled-down type */
   .hero { padding: 32px 0 20px; }
@@ -2705,17 +2735,17 @@ footer .closing-legal .tiny {
   table { min-width: 340px; font-size: 12.5px; }
   th { font-size: 9.5px; padding: 8px 8px; }
   td { padding: 8px 8px; }
-  /* Floating PDF save button — collapse to icon */
-  .save-pdf-btn {
+  /* Floating back-to-top button — collapse to icon */
+  .back-to-top {
     padding: 10px 12px;
     font-size: 0;
   }
-  .save-pdf-btn svg {
+  .back-to-top svg {
     width: 18px;
     height: 18px;
   }
-  .save-pdf-btn .btn-label-short,
-  .save-pdf-btn .btn-label-full { display: none; }
+  .back-to-top .btn-label-short,
+  .back-to-top .btn-label-full { display: none; }
 }
 
 /* Legacy narrow screens (iPhone 5/SE 1st gen, 320px) — must come AFTER 640px block to override table min-width */
@@ -2734,8 +2764,8 @@ footer .closing-legal .tiny {
   th { font-size: 9.5px !important; }
 }
 
-/* ===== FLOATING PDF / SAVE BUTTON ===== */
-.save-pdf-btn {
+/* ===== FLOATING BACK-TO-TOP BUTTON ===== */
+.back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -2755,21 +2785,31 @@ footer .closing-legal .tiny {
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(58,83,48,0.35), 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  /* Hidden until the reader has scrolled past the first viewport;
+     script.js toggles `.is-visible` on scroll. */
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
 }
-.save-pdf-btn:hover,
-.save-pdf-btn:focus {
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover,
+.back-to-top:focus {
   background: #3a5330;
   box-shadow: 0 6px 18px rgba(58,83,48,0.45), 0 3px 6px rgba(0,0,0,0.12);
   transform: translateY(-1px);
   outline: none;
 }
-.save-pdf-btn:active {
+.back-to-top:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(58,83,48,0.35);
 }
-.save-pdf-btn svg {
+.back-to-top svg {
   width: 16px;
   height: 16px;
   stroke: currentColor;
@@ -2778,17 +2818,17 @@ footer .closing-legal .tiny {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.save-pdf-btn .btn-label-short { display: none; }
+.back-to-top .btn-label-short { display: none; }
 @media (max-width: 520px) {
-  .save-pdf-btn {
+  .back-to-top {
     bottom: 16px;
     right: 16px;
     padding: 11px 15px 11px 12px;
     font-size: 11px;
     letter-spacing: 0.08em;
   }
-  .save-pdf-btn .btn-label-full { display: none; }
-  .save-pdf-btn .btn-label-short { display: inline; }
+  .back-to-top .btn-label-full { display: none; }
+  .back-to-top .btn-label-short { display: inline; }
 }
 
 /* ==========================================================================
@@ -2819,7 +2859,7 @@ footer .closing-legal .tiny {
   .cover-edition { right: 0.6in !important; }
 
   /* Hide interactive UI from PDF */
-  .topnav, .nav-toggle, .navmenu, .save-pdf-btn { display: none !important; }
+  .topnav, .nav-toggle, .nav-save-pdf, .navmenu, .back-to-top { display: none !important; }
 
   /* Clean page for PDF */
   html, body {
