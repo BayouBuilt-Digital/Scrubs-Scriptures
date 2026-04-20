@@ -1,0 +1,14 @@
+{
+  "name": "scrubs-scriptures",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Scrubs & Scripture Playbook — private deliverable for Wanda Pizzolato, LPN. Prepared by BayouBuilt Digital, a service of D&G Fuzion LLC.",
+  "scripts": {
+    "build": "python3 tools/build.py",
+    "pdf": "node tools/make-pdf.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  },
+  "license": "UNLICENSED"
+}
