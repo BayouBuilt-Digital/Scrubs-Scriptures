@@ -135,13 +135,15 @@ a:hover { color: var(--ink); }
   padding: 12px 20px;
   display: flex; align-items: center; gap: 16px;
 }
-.brand {
+/* Scoped to .topnav so the `brand` class doesn't collide with
+   `.audit-group.brand`, which uses `brand` purely as a color-variant modifier. */
+.topnav .brand {
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px; font-weight: 600;
   color: var(--ink); text-decoration: none;
   white-space: nowrap;
 }
-.brand em { font-style: italic; color: var(--rose); font-weight: 500; }
+.topnav .brand em { font-style: italic; color: var(--rose); font-weight: 500; }
 .nav-toggle {
   margin-left: auto;
   background: transparent;
@@ -1543,7 +1545,8 @@ footer .closing-legal .tiny {
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 2px;
-  white-space: nowrap;
+  /* Descriptive grant tags are full phrases, not short status chips —
+     allow them to wrap on narrow viewports rather than extend past the card. */
 }
 .grant-card.realistic .grant-tag { background: #eef4e7; color: #3a5330; }
 .grant-card.stretch .grant-tag { background: #faf3de; color: #7a6020; }
@@ -2481,7 +2484,7 @@ footer .closing-legal .tiny {
 
   /* Top nav */
   .topnav-inner { padding: 10px 16px; }
-  .brand { font-size: 17px; }
+  .topnav .brand { font-size: 17px; }
   .nav-toggle { padding: 6px 12px; font-size: 10px; }
 
   /* Hero — tighter spacing and scaled-down type */
