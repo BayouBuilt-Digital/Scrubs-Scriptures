@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Scrubs &amp; Scripture — Brand Palette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1832;
+    --ink-soft: #4a4363;
+    --rose: #a64e5c;
+    --rose-soft: #c77d88;
+    --rose-wash: #fbeaed;
+    --lilac: #8b7bb0;
+    --lilac-soft: #b4a5d1;
+    --lilac-wash: #f2ecf7;
+    --lilac-deep: #6b5d8c;
+    --cream-deep: #f7f4fb;
+    --paper: #ffffff;
+    --gold: #b8924a;
+    --gold-wash: #fbf3df;
+    --sage: #6b7f5c;
+    --sage-wash: #eef3e8;
+    --rule: #ddd4e8;
+    --rule-soft: #ebe5f1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:#ffffff;color:var(--ink)}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    font-size:15px;line-height:1.6;
+    background:
+      radial-gradient(at 10% 0%, rgba(166,78,92,0.02) 0%, transparent 45%),
+      radial-gradient(at 90% 0%, rgba(139,123,176,0.025) 0%, transparent 50%);
+    padding:64px 32px 120px;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+
+  .doc-head{text-align:center;margin-bottom:64px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+  .doc-eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;
+    color:var(--rose);margin-bottom:14px;
+  }
+  .doc-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(40px,6vw,56px);font-weight:500;line-height:1.05;letter-spacing:-0.02em;
+    margin-bottom:12px;
+  }
+  .doc-title em{font-family:'Fraunces',serif;font-style:italic;color:var(--lilac);font-weight:500}
+  .doc-lede{
+    font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink-soft);
+    max-width:560px;margin:0 auto;
+  }
+
+  h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;font-weight:500;letter-spacing:-0.01em;
+    margin:56px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--rule-soft);
+  }
+  h2 em{font-family:'Fraunces',serif;font-style:italic;color:var(--rose);font-weight:500}
+  h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;font-weight:600;margin:28px 0 12px;
+  }
+  p{margin-bottom:12px;color:var(--ink-soft);font-size:14.5px}
+
+  /* --- Swatch grid --- */
+  .swatches{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:16px;margin:18px 0 32px;
+  }
+  .sw{
+    border:1px solid var(--rule-soft);border-radius:3px;overflow:hidden;
+    background:#fff;box-shadow:0 1px 0 rgba(44,47,77,0.03);
+  }
+  .sw-chip{height:96px;display:block}
+  .sw-body{padding:12px 14px}
+  .sw-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:2px}
+  .sw-token{font-family:'Courier New',monospace;font-size:11.5px;color:var(--ink-soft);margin-bottom:6px}
+  .sw-hex{font-family:'Courier New',monospace;font-size:12px;font-weight:600;color:var(--ink);letter-spacing:0.02em}
+  .sw-note{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
+
+  /* --- Type specimens --- */
+  .type{
+    border:1px solid var(--rule-soft);border-radius:3px;padding:24px 26px;margin-bottom:14px;
+    background:#fff;box-shadow:0 1px 0 rgba(44,47,77,0.03);
+  }
+  .type-meta{
+    font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--rose);
+    margin-bottom:10px;
+  }
+  .type-stack{
+    font-family:'Courier New',monospace;font-size:11.5px;color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .spec-cormorant{font-family:'Cormorant Garamond',serif}
+  .spec-fraunces{font-family:'Fraunces',serif;font-style:italic}
+  .spec-inter{font-family:'Inter',-apple-system,sans-serif}
+  .spec-courier{font-family:'Courier New',monospace}
+  .spec-row{padding:10px 0;border-bottom:1px dashed var(--rule-soft)}
+  .spec-row:last-child{border-bottom:none}
+  .spec-label{
+    font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+
+  /* --- Voice table --- */
+  .voice-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px;
+  }
+  .voice-chip{
+    padding:14px 16px;border:1px solid var(--rule-soft);border-left:3px solid var(--sage);
+    background:#fff;border-radius:2px;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);
+  }
+
+  /* --- Component modifier examples --- */
+  .mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px}
+  .mod{
+    padding:14px 16px;border:1px solid var(--rule-soft);border-radius:2px;
+    background:#fff;font-size:13.5px;line-height:1.5;
+  }
+  .mod .mtag{
+    display:block;font-size:9.5px;font-weight:700;letter-spacing:0.22em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .mod strong{color:var(--ink)}
+  .mod.good{border-left:3px solid var(--sage);background:var(--sage-wash)}
+  .mod.good .mtag{color:#4a5e3f}
+  .mod.caution{border-left:3px solid var(--gold);background:var(--gold-wash)}
+  .mod.caution .mtag{color:#8a6a1f}
+  .mod.warn{border-left:3px solid var(--rose);background:var(--rose-wash)}
+  .mod.warn .mtag{color:var(--rose)}
+  .mod.neutral{border-left:3px solid var(--lilac);background:var(--lilac-wash)}
+  .mod.neutral .mtag{color:var(--lilac-deep)}
+
+  /* --- Dark ink demo --- */
+  .dark-demo{
+    margin-top:14px;padding:28px 26px;border-radius:3px;
+    background:linear-gradient(135deg,#1c1832 0%,#2d2547 50%,#3a2d4d 100%);
+    color:#faf5ed;
+  }
+  .dark-demo h3{font-family:'Cormorant Garamond',serif;color:#faf5ed;margin-bottom:8px}
+  .dark-demo h3 em{font-family:'Fraunces',serif;font-style:italic;color:var(--rose-soft);font-weight:500}
+  .dark-demo p{color:rgba(250,245,237,0.8);margin:0}
+
+  /* White text on sage CTA demo */
+  .cta-demo{
+    display:inline-block;padding:14px 30px;margin-top:14px;
+    background:#4a6b3f;color:#fff;border-radius:2px;
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.22em;text-transform:uppercase;
+    box-shadow:0 2px 0 rgba(58,83,48,0.25);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc-head">
+    <div class="doc-eyebrow">Brand Reference</div>
+    <h1 class="doc-title">Scrubs <em>&amp;</em> Scripture</h1>
+    <p class="doc-lede">Visual specimen of every palette token, font family, and component color convention used in the playbook.</p>
+  </header>
+
+  <!-- =============================================================== -->
+  <h2>Primary <em>ink</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#1c1832"></span><div class="sw-body"><div class="sw-name">Ink</div><div class="sw-token">--ink</div><div class="sw-hex">#1c1832</div><div class="sw-note">Body text, headings, high-emphasis.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#4a4363"></span><div class="sw-body"><div class="sw-name">Ink — soft</div><div class="sw-token">--ink-soft</div><div class="sw-hex">#4a4363</div><div class="sw-note">Muted copy, ledes, captions.</div></div></div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Rose <em>— primary accent</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#a64e5c"></span><div class="sw-body"><div class="sw-name">Rose</div><div class="sw-token">--rose</div><div class="sw-hex">#a64e5c</div><div class="sw-note">Links, section numbers, italic emphasis.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#c77d88"></span><div class="sw-body"><div class="sw-name">Rose — soft</div><div class="sw-token">--rose-soft</div><div class="sw-hex">#c77d88</div><div class="sw-note">Hover tints, muted italics, Encourager archetype.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#fbeaed"></span><div class="sw-body"><div class="sw-name">Rose — wash</div><div class="sw-token">--rose-wash</div><div class="sw-hex">#fbeaed</div><div class="sw-note">Default callout background.</div></div></div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Lilac <em>— secondary accent</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#8b7bb0"></span><div class="sw-body"><div class="sw-name">Lilac</div><div class="sw-token">--lilac</div><div class="sw-hex">#8b7bb0</div><div class="sw-note">Cover italic &amp;, diamond ornaments, path-card border.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#b4a5d1"></span><div class="sw-body"><div class="sw-name">Lilac — soft</div><div class="sw-token">--lilac-soft</div><div class="sw-hex">#b4a5d1</div><div class="sw-note">Ornament rules, dividers.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#f2ecf7"></span><div class="sw-body"><div class="sw-name">Lilac — wash</div><div class="sw-token">--lilac-wash</div><div class="sw-hex">#f2ecf7</div><div class="sw-note">Cover background, OG-card background.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#6b5d8c"></span><div class="sw-body"><div class="sw-name">Lilac — deep</div><div class="sw-token">--lilac-deep</div><div class="sw-hex">#6b5d8c</div><div class="sw-note">Cover metadata eyebrow, deep accents.</div></div></div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Sage <em>— CTA + companion</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#6b7f5c"></span><div class="sw-body"><div class="sw-name">Sage</div><div class="sw-token">--sage</div><div class="sw-hex">#6b7f5c</div><div class="sw-note">Storyteller archetype, affirmative callouts.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#eef3e8"></span><div class="sw-body"><div class="sw-name">Sage — wash</div><div class="sw-token">--sage-wash</div><div class="sw-hex">#eef3e8</div><div class="sw-note">.callout.good background.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#4a6b3f"></span><div class="sw-body"><div class="sw-name">Sage — CTA</div><div class="sw-token">literal</div><div class="sw-hex">#4a6b3f</div><div class="sw-note">Primary button background.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#3a5330"></span><div class="sw-body"><div class="sw-name">Sage — CTA hover</div><div class="sw-token">literal</div><div class="sw-hex">#3a5330</div><div class="sw-note">CTA hover state.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#6b8a5f"></span><div class="sw-body"><div class="sw-name">Sage — mid</div><div class="sw-token">literal</div><div class="sw-hex">#6b8a5f</div><div class="sw-note">Companion block top-rule, audit eyebrow.</div></div></div>
+  </div>
+  <a class="cta-demo" href="#">Schedule a Free Site Walkthrough</a>
+
+  <!-- =============================================================== -->
+  <h2>Gold <em>— caution</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#b8924a"></span><div class="sw-body"><div class="sw-name">Gold</div><div class="sw-token">--gold</div><div class="sw-hex">#b8924a</div><div class="sw-note">Cover volume marker, Teacher archetype, caution.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#fbf3df"></span><div class="sw-body"><div class="sw-name">Gold — wash</div><div class="sw-token">--gold-wash</div><div class="sw-hex">#fbf3df</div><div class="sw-note">.callout.caution background, gap-card background.</div></div></div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Neutrals <em>&amp; rules</em></h2>
+  <div class="swatches">
+    <div class="sw"><span class="sw-chip" style="background:#ffffff;border-bottom:1px solid var(--rule-soft)"></span><div class="sw-body"><div class="sw-name">Cream / Paper</div><div class="sw-token">--cream, --paper</div><div class="sw-hex">#ffffff</div><div class="sw-note">Card backgrounds, body.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#f7f4fb"></span><div class="sw-body"><div class="sw-name">Cream — deep</div><div class="sw-token">--cream-deep</div><div class="sw-hex">#f7f4fb</div><div class="sw-note">Tinted surfaces (e.g. TH).</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#ddd4e8"></span><div class="sw-body"><div class="sw-name">Rule</div><div class="sw-token">--rule</div><div class="sw-hex">#ddd4e8</div><div class="sw-note">Default divider line.</div></div></div>
+    <div class="sw"><span class="sw-chip" style="background:#ebe5f1"></span><div class="sw-body"><div class="sw-name">Rule — soft</div><div class="sw-token">--rule-soft</div><div class="sw-hex">#ebe5f1</div><div class="sw-note">Dashed inner divider.</div></div></div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Key-Insight <em>dark gradient</em></h2>
+  <div class="dark-demo">
+    <h3>A blog is <em>not</em> a business.</h3>
+    <p>The dark standout at §2 uses a three-stop gradient from #1c1832 → #2d2547 → #3a2d4d. Text on it is #faf5ed (warm cream).</p>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Component modifier <em>color map</em></h2>
+  <p>Rule of thumb: <strong>affirmative = sage, caution = gold, warning = rose, neutral = lilac.</strong> New variants should follow this mapping.</p>
+  <div class="mod-grid">
+    <div class="mod good"><span class="mtag">Affirmative · sage</span><strong>.callout.good</strong> — .voice-example.yours, .compare-card.good, .niche-card.viable</div>
+    <div class="mod caution"><span class="mtag">Caution · gold</span><strong>.callout.caution</strong> — .niche-card.hard, .voice-example.bland, .grant-card.stretch</div>
+    <div class="mod warn"><span class="mtag">Warning · rose</span><strong>.callout</strong> (default) — .compare-card.bad</div>
+    <div class="mod neutral"><span class="mtag">Neutral · lilac</span><strong>.path-card</strong> — .pattern-card accents</div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Typography <em>specimens</em></h2>
+
+  <div class="type">
+    <div class="type-meta">Display serif — headings</div>
+    <div class="type-stack">font-family: 'Cormorant Garamond', serif;</div>
+    <div class="spec-row">
+      <div class="spec-label">Cover title · 96 px · weight 400 · tracking -0.025em</div>
+      <div class="spec-cormorant" style="font-size:72px;font-weight:400;line-height:1;letter-spacing:-0.025em">Scrubs <span class="spec-fraunces" style="color:var(--lilac);font-size:0.92em">&amp;</span> Scripture</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Section heading · 40 px · weight 500</div>
+      <div class="spec-cormorant" style="font-size:36px;font-weight:500;line-height:1.1;letter-spacing:-0.01em">Before You <em style="font-family:'Fraunces',serif;color:var(--rose);font-weight:500">Decide Anything</em></div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Card title · 22 px · weight 600</div>
+      <div class="spec-cormorant" style="font-size:22px;font-weight:600">The Encourager</div>
+    </div>
+  </div>
+
+  <div class="type">
+    <div class="type-meta">Italic accent serif — ledes, pullquotes</div>
+    <div class="type-stack">font-family: 'Fraunces', serif; font-style: italic;</div>
+    <div class="spec-row">
+      <div class="spec-label">Section lede · 17.5 px · weight 400</div>
+      <div class="spec-fraunces" style="font-size:17.5px;color:var(--ink-soft);line-height:1.55">Everything in this guide — the structure, the money, the content — flows from a decision you haven't made yet.</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Archetype voice sample · 15 px</div>
+      <div class="spec-fraunces" style="font-size:15px;color:var(--ink);padding:10px 14px;background:var(--cream-deep);border-left:2px solid var(--rule)">"Friend, I know what this shift cost you. Put your bag down. Let's breathe together."</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Signature · 14 px</div>
+      <div class="spec-fraunces" style="font-size:14px;color:var(--ink-soft)">— <strong style="font-family:'Inter',sans-serif;font-style:normal;font-weight:600;color:var(--sage)">BayouBuilt Digital</strong>, a service of D&amp;G Fuzion LLC</div>
+    </div>
+  </div>
+
+  <div class="type">
+    <div class="type-meta">UI sans — body, buttons, eyebrows</div>
+    <div class="type-stack">font-family: 'Inter', -apple-system, sans-serif;</div>
+    <div class="spec-row">
+      <div class="spec-label">Body copy · 16 px · weight 400 · line-height 1.7</div>
+      <div class="spec-inter" style="font-size:16px;line-height:1.7;color:var(--ink)">Most guides skip straight to "here's how to file your LLC." That's backwards. A business structure you'll never use is just paperwork.</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">CTA button · 11 px · weight 600 · tracking 0.22em · uppercase</div>
+      <div class="spec-inter" style="font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#fff;background:#4a6b3f;padding:14px 30px;border-radius:2px;display:inline-block">Come Say Hello</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-label">Eyebrow · 10 px · weight 700 · tracking 0.3em · uppercase</div>
+      <div class="spec-inter" style="font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose)">A Small Business Playbook</div>
+    </div>
+  </div>
+
+  <div class="type">
+    <div class="type-meta">Code monospace</div>
+    <div class="type-stack">font-family: 'Courier New', monospace;</div>
+    <div class="spec-row">
+      <div class="spec-label">Search example chip · 12.5 px</div>
+      <div class="spec-courier" style="font-size:12.5px;color:#4a5e3f;background:#fff;border:1px dashed #c8d4b8;padding:4px 10px;border-radius:2px;display:inline-block">LPN continuing education Louisiana</div>
+    </div>
+  </div>
+
+  <!-- =============================================================== -->
+  <h2>Voice <em>reference</em></h2>
+  <p>When drafting new copy, keep the register in line with these existing CTAs — warm, business-forward, plainspoken. Not devotional.</p>
+  <div class="voice-grid">
+    <div class="voice-chip">Come Say Hello</div>
+    <div class="voice-chip">Start a Conversation</div>
+    <div class="voice-chip">Schedule a Free Site Walkthrough</div>
+    <div class="voice-chip">Let's Talk</div>
+    <div class="voice-chip">Reach us at contact@bayoubuilt-digital.com</div>
+  </div>
+
+</div>
+</body>
+</html>
