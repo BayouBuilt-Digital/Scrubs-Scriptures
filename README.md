@@ -18,7 +18,9 @@ minified **production bundle** under `/dist`.
 | `index.html` | Structure + body copy only |
 | `styles.css` | All styling, with labeled section TOC at the top |
 | `script.js` | Nav toggle, anchor-close behavior, "Save as PDF" trigger |
-| `playbook.pdf` | Print-ready version (81 pages, 1.28 MB) |
+| `favicon.svg` + `favicon-{16,32,180,512}.png` + `favicon.ico` | Browser tab icon set |
+| `og-image.png` | 1200 × 630 social-preview card (Open Graph + Twitter) |
+| `playbook.pdf` | Print-ready version (~82 pages, 1.24 MB) |
 
 ### Production bundle (deploy these)
 
@@ -27,8 +29,9 @@ minified **production bundle** under `/dist`.
 | `dist/index.html` | Minified HTML, points at the minified CSS/JS |
 | `dist/styles.min.css` | Minified stylesheet |
 | `dist/script.min.js` | Minified script |
+| `dist/favicon.*` + `dist/og-image.png` | Favicon set + social-preview card, copied verbatim |
 
-Ship the three files in `/dist` to GitHub Pages. The root files stay as the
+Ship the contents of `/dist` to GitHub Pages. The root files stay as the
 maintenance source.
 
 ## Live URL

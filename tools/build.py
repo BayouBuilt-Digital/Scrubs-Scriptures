@@ -11,10 +11,22 @@ Run from the repo root:
 
 import os
 import re
+import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, 'dist')
+
+# Static assets (favicon, social preview) that ship alongside the HTML/CSS/JS.
+STATIC_ASSETS = [
+    'favicon.svg',
+    'favicon.ico',
+    'favicon-16.png',
+    'favicon-32.png',
+    'favicon-180.png',
+    'favicon-512.png',
+    'og-image.png',
+]
 
 
 def minify_css(css: str) -> str:
@@ -106,6 +118,13 @@ def main():
     open(os.path.join(DIST, 'script.min.js'), 'w').write(js_out)
     open(os.path.join(DIST, 'index.html'), 'w').write(html_out)
 
+    # Copy static assets (favicon, social preview image) so /dist is
+    # a self-contained deployable bundle.
+    for asset in STATIC_ASSETS:
+        src = os.path.join(ROOT, asset)
+        if os.path.exists(src):
+            shutil.copy2(src, os.path.join(DIST, asset))
+
     print(f'  styles.min.css  {len(css_src):>7} -> {len(css_out):>7} bytes')
     print(f'  script.min.js   {len(js_src):>7} -> {len(js_out):>7} bytes')
     print(f'  index.html      {len(html_src):>7} -> {len(html_out):>7} bytes')
@@ -114,6 +133,7 @@ def main():
     saved = total_src - total_out
     print(f'  total           {total_src:>7} -> {total_out:>7} bytes  '
           f'({saved:,} bytes / {saved / total_src * 100:.1f}% saved)')
+    print(f'  copied static:  {", ".join(a for a in STATIC_ASSETS if os.path.exists(os.path.join(ROOT, a)))}')
 
 
 if __name__ == '__main__':

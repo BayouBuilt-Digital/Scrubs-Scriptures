@@ -2201,8 +2201,9 @@ footer .closing-legal .tiny {
   color: var(--ink);
   position: relative;
   word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   hyphens: auto;
+  min-width: 0;
 }
 .audit-group li:last-child { border-bottom: none; }
 .audit-group li::before {
